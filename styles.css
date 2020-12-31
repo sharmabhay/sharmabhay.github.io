@@ -1,0 +1,82 @@
+#test {
+  font-style: Verdana, "Times New Roman", Serif;
+  color: red;
+  background-color: #4df02d;
+  margin-bottom: 25px;
+}
+
+#uwp {
+  background-image: linear-gradient(to right, #00c3ff, #ffff1c);
+  color: white;
+}
+
+#testImage {
+  border: 2px solid black;
+}
+
+#mySliderValue {
+  font-style: Verdana, "Times New Roman", Serif;
+  color: #0fe28a;
+}
+
+#myPoints {
+  font-style: Verdana, "Times New Roman", Serif;
+  color: #2a77db;
+  background-color: #f700ff;
+}
+
+#myGit {
+  margin-bottom: 5px;
+}
+
+#addressSpace {
+  margin-top: 30px;
+}
+
+/*
+.w75 {
+    width: 75%;
+}
+
+.p5 {
+    padding: 5px;
+}
+
+.mb25 {
+    margin-bottom: 25px;
+}
+
+.textJustify {
+    text-align: justify;
+}
+
+.inlineCenter {
+    text-align: center;
+}
+
+.blockCenter {
+    margin: 0 auto;
+}
+
+.small {
+    font-size: 80%;
+    font-weight: 400;
+}
+*/
+.blueLinkColour {
+  color: blue;
+}
+
+.listNumberInside {
+  list-style-position: inside;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+h1 {
+  font-style: Verdana, "Times New Roman", Serif;
+}
+
+/*# sourceMappingURL=styles.css.map */
