@@ -25,4 +25,4 @@ window.onload = (_) => {
         seaSelector.value = "";
     };
 };
-//# sourceMappingURL=another.js.map
+//# sourceMappingURL=scripts.js.map
