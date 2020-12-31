@@ -12,6 +12,7 @@
         "noImplicitThis": true,
         "noImplicitReturns": true
     },
+
     "files": [
         "another.ts"
     ]
