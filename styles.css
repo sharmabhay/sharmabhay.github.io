@@ -1,3 +1,11 @@
+h1 {
+  font-style: Verdana, "Times New Roman", Serif;
+}
+
+body {
+  background-color: #34495e;
+}
+
 #test {
   font-style: Verdana, "Times New Roman", Serif;
   color: red;
@@ -75,8 +83,38 @@
   text-decoration: underline;
 }
 
-h1 {
-  font-style: Verdana, "Times New Roman", Serif;
+.container {
+  background-color: white;
+}
+
+.bg-offWhite {
+  background-color: #f7f7f7;
+}
+
+.accent {
+  color: #e45900;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #212529;
+}
+
+.font-special {
+  font-family: "Dosis", sans-serif;
+}
+
+@media (max-width: 767px) {
+  .bg-offWhite {
+    background-color: white;
+  }
+}
+a:hover {
+  color: #e45900;
+}
+
+img.mx-auto {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
