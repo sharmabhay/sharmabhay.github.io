@@ -1,5 +1,5 @@
 window.onload = function (_) {
-    // Top Button
+    // Go to Top Button
     var topButton = document.getElementById("topButton");
     topButton.onclick = function (_) {
         document.body.scrollTop = 0;

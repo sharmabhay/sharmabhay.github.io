@@ -1,5 +1,5 @@
 window.onload = (_: Event) => {
-    // Top Button
+    // Go to Top Button
     const topButton = document.getElementById("topButton") as HTMLButtonElement;
 
     topButton.onclick = (_: Event) => {
