@@ -1,2 +1,2 @@
 # sharmabhay.github.io
-This is a GitHub Website about myself.
+This is a GitHub Pages Website about myself.
