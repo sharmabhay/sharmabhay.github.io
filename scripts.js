@@ -1,8 +1,9 @@
-window.onload = function (_) {
-    // Go to Top Button
-    var topButton = document.getElementById("topButton");
-    topButton.onclick = function (_) {
+"use strict";
+window.onload = (_) => {
+    const topButton = document.getElementById("topButton");
+    topButton.onclick = (_) => {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     };
 };
+//# sourceMappingURL=scripts.js.map

@@ -4,26 +4,37 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 
-        <script src="https://kit.fontawesome.com/b85aa0727f.js" integrity="sha384-eoEIP4kL867FWM1D0Gem6jxjxMlsD5jiBy1lo9hB45B9e6PLQZ96UxgVowiBgMxx" crossorigin="anonymous"></script>
-
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-        <link rel="stylesheet" href="styles.css" />
-
-        <link rel="global icon" href="226-2261407_seagate-global-hd-png-download.ico" />
         <title>Abhay Sharma</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+
+        <link href="css/styles.css" rel="stylesheet" />
     </head>
 
-    <body>
-        <nav class="navbar navbar-expand-md sticky-top bg-success navbar-dark mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/"><i class="fas fa-globe"></i> Home</a>
+    <body id="page-top">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="top-nav">
+            <div class="container">
+                <a class="navbar-brand js-scoll-trigger" href="#page-top">Home</a>
 
-                <div class="align-self-center">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu <i class="fas fa-bars m1-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="top-nav-responsive">
                     <ul class="navbar-nav ml-auto">
-                        <li><a class="navbar-brand nav-link" href="#about"><i class="fas fa-address-card"></i> About</a></li>
-                        <li><a class="navbar-brand nav-link" href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-                        <li><a class="navbar-brand nav-link" href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                        <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,6 +48,33 @@
             </button>
         </div>
 
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center"></div>
+                    <h2 class="mx-auto my-0">Hello!</h2>
+                    <h3 class="text-white-50 mx-auto mt-2 mb-5">I am Abhay Sharma</h3>
+                    <a class="btn btn-primary js-scroll-trigger" href="#about">Aspiring Data Scientist</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="contianer">
+                <h2 class="page-section-heading text-center text-white">Who am I?</h2>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto">
+                        <p class="lead">I am a first-year Mathematics student at the University of Waterloo, working towards a specialization in Data Science. 
+                        I'm very passionate about data science, machine learning and artificial intelligence, though I have been into front-end web development 
+                        as well as back-end building and analysis lately. I've also been working on some <a class="about-links" href="#projects">projects</a> relating
+                        to these concepts.</p>
+                    </div>
+                    <div class="col-lg-4 ml-auto">
+                        <p class="lead">TODO: Finish this part of the Introduction.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-9 py-5 px-4 text-center text-md-left">
@@ -44,34 +82,6 @@
                     <a href="mailto:abhay240102@gmail.com"><i class="fa fa-2x fa-envelope-square" aria-hidden="true"></i></a>
                     <a href="https://www.linkedin.com/in/abhay-sharma-b673571b5"><i class="fa fa-2x fa-linkedin-square ml-2 mr-2" aria-hidden="true"></i></a>
                     <a href="https://github.com/sharmabhay"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
-                </div>
-            </div>
-
-            <h2 id="about" class="mb-4">About myself</h2>
-            <p class="text-justify mb-2">
-                I'm a first-year student at the University of Waterloo, currently studying
-                Mathematics. I'm passionate in data science and have been into front-end web
-                development as well as back-end building and analysis lately.
-            </p>
-
-            <div class="bg-offWhite mb-4">
-                <h2 class="font-special text-md-left">Work-based Experience</h2>
-            </div>
-
-            <div class="bg-offWhite mb-4">
-                <h2 class="font-special text-md-left">Projects & Skills</h2>
-
-                <div class="col-md-9 pb-5 px-4">
-                    <h4 class="mb-3" >Projects</h3>
-                    <a href="https://github.com/sharmabhay/library" class="blueLinkColour" style="font-size: large;">Library Management Software</a>
-
-                    <h4 class="mb-3" >Skills</h3>
-                    <dl class="row">
-                        <dt class="col-sm-4 col-lg-3">Category</dt>
-                        <dd class="col-sm-8 col-lg-9">Skills</dd>
-                        <dt class="col-sm-4 col-lg-3">Category</dt>
-                        <dd class="col-sm-8 col-lg-9">Skills</dd>
-                    </dl>
                 </div>
             </div>
 
@@ -133,26 +143,6 @@
                 </div>
             </div>
 
-            <div class="card bg-light text-dark">
-                <div class="card-header bg-light text-dark">
-                    <p class="small mb-0">Primary School</p>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold mb-0">
-                        Edgefield <abbr title="Edgefield Primary School">(EFPS)</abbr>
-                    </h5>
-                    <p class="small text-muted font-italic mb-2">Edgefield Plains, Singapore</p>
-                    <p class="card-text">
-                        Attended for <abbr title="(primary 1 to 6)">grades 1 to 6.</abbr>
-                        Studied regular primary school courses with some focus on STEM subjects, and was an active member of the school's Soccer Team, Science and Technology Club
-                        as well as the Student Investiture Program.
-                    </p>
-                </div>
-                <div class="card-footer bg-light text-muted">
-                    <p class="small mb-0">2009-2014</p>
-                </div>
-            </div>
-
             <hr /><hr />
 
             <button id="topButton" value="primary" title="Top of Page">Go to Top</button>
@@ -167,6 +157,11 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="scripts.js"></script>
     </body>
