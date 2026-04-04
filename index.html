@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <meta
+            name="description"
+            content="Abhay Sharma — GenAI Engineer; Honours BMath (Statistics), University of Waterloo. Data science, engineering, and software."
+        />
+        <meta name="author" content="Abhay Sharma" />
 
         <title>Abhay Sharma</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
@@ -14,155 +16,267 @@
 
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 
-        <link href="css/styles.css" rel="stylesheet" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        />
+        <link href="styles.css" rel="stylesheet" />
     </head>
 
     <body id="page-top">
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="top-nav">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scoll-trigger" href="#page-top">Home</a>
-
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu <i class="fas fa-bars m1-1"></i>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Abhay Sharma</a>
+                <button
+                    class="navbar-toggler navbar-toggler-right"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    Menu
+                    <i class="fas fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="top-nav-responsive">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#experience">Experience</a></li>
                         <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#resume">Resume</a></li>
                         <li class="nav-item"><a class="js-scroll-trigger nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="alert alert-info alert-dismissible fade show w-75 p-3 mb-5 mx-auto" role="alert">
-            Check out my <a href="#myGit" class="alert-link">Library Software Management Project</a>!
-            It's a software which helps to manage books in a database I created!
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+        <div class="container pt-5 mt-5">
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                Explore my <a href="#projects" class="alert-link">GitHub projects</a> or
+                <a href="#resume" class="alert-link">download my résumé</a>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
 
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
-                <div class="mx-auto text-center"></div>
-                    <h2 class="mx-auto my-0">Hello!</h2>
-                    <h3 class="text-white-50 mx-auto mt-2 mb-5">I am Abhay Sharma</h3>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">Aspiring Data Scientist</a>
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Hello</h1>
+                    <h2 class="text-white-50 mx-auto mt-3 mb-2">I am Abhay Sharma</h2>
+                    <p class="text-white-50 mx-auto mb-0 lead masthead-tagline">Statistics · Computer Science · Data &amp; AI</p>
                 </div>
             </div>
         </header>
 
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="contianer">
-                <h2 class="page-section-heading text-center text-white">Who am I?</h2>
+        <section class="about-section text-center" id="about">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 ml-auto">
-                        <p class="lead">I am a first-year Mathematics student at the University of Waterloo, working towards a specialization in Data Science. 
-                        I'm very passionate about data science, machine learning and artificial intelligence, though I have been into front-end web development 
-                        as well as back-end building and analysis lately. I've also been working on some <a class="about-links" href="#projects">projects</a> relating
-                        to these concepts.</p>
-                    </div>
-                    <div class="col-lg-4 ml-auto">
-                        <p class="lead">TODO: Finish this part of the Introduction.</p>
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">About</h2>
+                        <p class="text-white-50">
+                            I am an Honours Bachelor of Mathematics graduate from the University of Waterloo, with a major in Statistics and minors in
+                            Computer Science and Economics (2020–2025). I am currently a GenAI Engineer in a full-time contract role (since November 2025). I care about machine learning, statistics, and building systems that make data
+                            easier to understand and use — from data engineering and modeling to full-stack tools. Browse my
+                            <a class="about-link" href="#projects">projects</a>
+                            or grab my
+                            <a class="about-link" href="#resume">résumé</a>
+                            if you would like to connect.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9 py-5 px-4 text-center text-md-left">
-                    <p class="display-2 mb-5 font-special">Abhay Sharma</p>
-                    <a href="mailto:abhay240102@gmail.com"><i class="fa fa-2x fa-envelope-square" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/abhay-sharma-b673571b5"><i class="fa fa-2x fa-linkedin-square ml-2 mr-2" aria-hidden="true"></i></a>
-                    <a href="https://github.com/sharmabhay"><i class="fa fa-2x fa-github-square" aria-hidden="true"></i></a>
+        <section class="experience-section bg-light" id="experience">
+            <div class="container py-5">
+                <h2 class="text-center mb-5">Education &amp; experience</h2>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <div class="card bg-white text-dark shadow-sm border-0 experience-card">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="h5 font-weight-bold mb-1">University of Waterloo</h3>
+                                <p class="small text-muted font-italic mb-3">Waterloo, ON, Canada · 2020–2025</p>
+                                <p class="card-text mb-0">
+                                    Honours Bachelor of Mathematics: <strong>Statistics</strong> major; minors in <strong>Computer Science</strong> and
+                                    <strong>Economics</strong>. Co-operative education program.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="card bg-white text-dark shadow-sm border-0 experience-card">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="h5 font-weight-bold mb-2">Professional experience</h3>
+                                <p class="text-muted small mb-4">
+                                    Two years of co-operative education across six terms, plus a current full-time role.
+                                </p>
+                                <ul class="list-unstyled experience-list mb-0">
+                                    <li class="mb-4">
+                                        <strong>Generative AI Engineer</strong>
+                                        <span class="text-muted"> — November 2025 to present · Full-time contract</span>
+                                    </li>
+                                    <li class="mb-4">
+                                        <strong>Data Scientist</strong>
+                                        <span class="text-muted"> — 8 months · May 2024 to December 2024</span>
+                                    </li>
+                                    <li class="mb-4">
+                                        <strong>Data Engineer</strong>
+                                        <span class="text-muted"> — 4 months · May 2023 to August 2023</span>
+                                    </li>
+                                    <li class="mb-4">
+                                        <strong>Data Science Engineer</strong>
+                                        <span class="text-muted"> — 4 months · September 2022 to December 2022</span>
+                                    </li>
+                                    <li class="mb-4">
+                                        <strong>Data Scientist</strong>
+                                        <span class="text-muted"> — 4 months · January 2022 to April 2022</span>
+                                    </li>
+                                    <li class="mb-0">
+                                        <strong>Software Developer</strong>
+                                        <span class="text-muted"> — 4 months · May 2021 to August 2021</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card bg-light text-dark">
-                <div class="card-header bg-light text-dark">
-                    <p class="small mb-0">University</p>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold mb-0">
-                        <abbr title="University of Waterloo Mathematics">UWaterloo Math</abbr>
-                    </h5>
-                    <p class="small text-muted font-italic mb-2">Waterloo, ON, Canada</p>
-                    <p class="card-text">
-                        Currently a first-year student studying for a <abbr title="Bachelor of Mathematics">BMath</abbr>
-                        and part of the Co-op education program. Class of 2025.
-                    </p>
-                </div>
-                <div class="card-footer bg-light text-muted">
-                    <p class="small mb-0">2020-Present</p>
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <h2 class="text-center mb-2">Projects</h2>
+                <p class="text-center text-black-50 mb-5 mx-auto intro-narrow">
+                    Selected repositories from my GitHub — follow the links for code and details.
+                </p>
+
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 font-weight-bold">aurora-dash</h3>
+                                <p class="text-black-50 small flex-grow-1">
+                                    Dashboard and visualization work — explore metrics and UI in the repo.
+                                </p>
+                                <a
+                                    class="btn btn-sm btn-outline-primary mt-2 align-self-start"
+                                    href="https://github.com/sharmabhay/aurora-dash"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    >View on GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 font-weight-bold">ruko</h3>
+                                <p class="text-black-50 small flex-grow-1">Application project — see the README on GitHub for scope and setup.</p>
+                                <a
+                                    class="btn btn-sm btn-outline-primary mt-2 align-self-start"
+                                    href="https://github.com/sharmabhay/ruko"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    >View on GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 font-weight-bold">modis250</h3>
+                                <p class="text-black-50 small flex-grow-1">
+                                    MODIS-based geospatial / data science work (250m resolution products). Documentation in the repository.
+                                </p>
+                                <a
+                                    class="btn btn-sm btn-outline-primary mt-2 align-self-start"
+                                    href="https://github.com/sharmabhay/modis250"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    >View on GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card project-card h-100 shadow-sm">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="h5 font-weight-bold">llm-rag-chatbot</h3>
+                                <p class="text-black-50 small flex-grow-1">
+                                    LLM chatbot with retrieval-augmented generation — experiments in prompting and document grounding.
+                                </p>
+                                <a
+                                    class="btn btn-sm btn-outline-primary mt-2 align-self-start"
+                                    href="https://github.com/sharmabhay/llm-rag-chatbot"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    >View on GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="card bg-light text-dark">
-                <div class="card-header bg-light text-dark">
-                    <p class="small mb-0">High School</p>
+        <section class="contact-section bg-black" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0" id="resume">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center d-flex flex-column">
+                                <i class="fas fa-file-pdf text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Résumé</h4>
+                                <hr class="my-4" />
+                                <a class="btn btn-accent align-self-center" href="AbhaySharma_Resume.pdf" download>Download résumé (PDF)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fab fa-github text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Connect</h4>
+                                <hr class="my-4" />
+                                <p class="small text-black-50 mb-0">Find more code and activity on my GitHub profile.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold mb-0">
-                        West Humber <abbr title="West Humber Collegiate Institute">(WHCI)</abbr>
-                    </h5>
-                    <p class="small text-muted font-italic mb-2">Toronto, ON, Canada</p>
-                    <p class="card-text">
-                        Attended for grades 11 and 12.
-                        TODO: Add more information.
-                    </p>
-                </div>
-                <div class="card-footer bg-light text-muted">
-                    <p class="small mb-0">2019-2020</p>
-                </div>
-            </div>
-
-            <div class="card bg-light text-dark">
-                <div class="card-header bg-light text-dark">
-                    <p class="small mb-0">Secondary School</p>
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold mb-0">
-                        Edgefield <abbr title="Edgefield Secondary School">(EFSS)</abbr>
-                    </h5>
-                    <p class="small text-muted font-italic mb-2">Punggol Field, Singapore</p>
-                    <p class="card-text">
-                        Attended for <abbr title="(secondary 1 to 4)">grades 7 to 10.</abbr>
-                        Studied regular secondary school courses (equivalent to AP courses in North America)...
-                        TODO: Add more information. 
-                    </p>
-                </div>
-                <div class="card-footer bg-light text-muted">
-                    <p class="small mb-0">2015-2018</p>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://github.com/sharmabhay" rel="noopener noreferrer" target="_blank" aria-label="GitHub profile">
+                        <i class="fab fa-github"></i>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <hr /><hr />
+        <footer class="site-footer text-center py-4 bg-black">
+            <div class="container">
+                <p class="small text-white-50 mb-0">
+                    © <span id="year"></span> — Coded and designed by <strong class="text-white">Abhay Sharma</strong>
+                </p>
+            </div>
+        </footer>
 
-            <button id="topButton" value="primary" title="Top of Page">Go to Top</button>
+        <button type="button" class="btn-top" id="topButton" title="Back to top" aria-label="Back to top">
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
+        </button>
 
-            <hr />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-            <footer class="mb-4">
-                <span class="small">© 2021 -</span>
-                <span class="small underline">Coded, Designed and Written by <strong>Abhay Sharma</strong></span>
-            </footer>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script src="scripts.js"></script>
     </body>
 </html>

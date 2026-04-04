@@ -1,0 +1,13 @@
+{
+  "name": "sharmabhay.github.io",
+  "private": true,
+  "scripts": {
+    "build": "sass styles.scss styles.css --style=expanded && tsc -p tsconfig.json",
+    "watch:css": "sass --watch styles.scss:styles.css",
+    "watch:ts": "tsc -p tsconfig.json --watch"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "typescript": "^5.4.0"
+  }
+}

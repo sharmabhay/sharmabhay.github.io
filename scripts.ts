@@ -1,63 +1,105 @@
-window.onload = (_: Event) => {
-    // Go to Top Button
-    const topButton = document.getElementById("topButton") as HTMLButtonElement;
+const NAV_SHRINK_AT = 100;
+const SCROLL_SPY_OFFSET = 120;
+const SCROLL_ANCHOR_OFFSET = 70;
 
-    topButton.onclick = (_: Event) => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    };
-};
+const SECTION_IDS = ["about", "experience", "projects", "contact"] as const;
 
-/*
-(function ($) {
-    "use strict"; // Start of use strict
-
-    // Smooth scrolling using jQuery easing
-    $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
-        if (
-            location.pathname.replace(/^\//, "") ==
-                this.pathname.replace(/^\//, "") &&
-            location.hostname == this.hostname
-        ) {
-            var target = $(this.hash);
-            target = target.length
-                ? target
-                : $("[name=" + this.hash.slice(1) + "]");
-            if (target.length) {
-                $("html, body").animate(
-                    {
-                        scrollTop: target.offset().top - 70,
-                    },
-                    1000,
-                    "easeInOutExpo"
-                );
-                return false;
-            }
-        }
-    });
-
-    // Closes responsive menu when a scroll trigger link is clicked
-    $(".js-scroll-trigger").click(function () {
+function hideNavbarCollapse(): void {
+    const $ = (window as unknown as { jQuery?: (sel: string) => { collapse: (action: string) => void } }).jQuery;
+    if ($) {
         $(".navbar-collapse").collapse("hide");
-    });
+        return;
+    }
+    document.getElementById("navbarResponsive")?.classList.remove("show");
+}
 
-    // Activate scrollspy to add active class to navbar items on scroll
-    $("body").scrollspy({
-        target: "#mainNav",
-        offset: 100,
-    });
+function updateNavbarShrink(): void {
+    const nav = document.getElementById("mainNav");
+    if (!nav) {
+        return;
+    }
+    nav.classList.toggle("navbar-shrink", window.scrollY > NAV_SHRINK_AT);
+}
 
-    // Collapse Navbar
-    var navbarCollapse = function () {
-        if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-shrink");
-        } else {
-            $("#mainNav").removeClass("navbar-shrink");
+function updateScrollSpy(): void {
+    const scrollPos = window.scrollY + SCROLL_SPY_OFFSET;
+    let activeId: string | null = null;
+    for (const id of SECTION_IDS) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollPos) {
+            activeId = id;
         }
+    }
+    const links = document.querySelectorAll<HTMLAnchorElement>("#mainNav .nav-link.js-scroll-trigger");
+    links.forEach((link) => {
+        const href = link.getAttribute("href");
+        const id = href && href.startsWith("#") ? href.slice(1) : "";
+        const isSection = (SECTION_IDS as readonly string[]).includes(id);
+        link.classList.toggle("active", isSection && id === activeId);
+    });
+}
+
+function scrollToAnchor(hash: string): void {
+    if (hash === "#page-top" || hash === "#") {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        return;
+    }
+    const target = document.querySelector<HTMLElement>(hash);
+    if (!target) {
+        return;
+    }
+    const top = target.getBoundingClientRect().top + window.pageYOffset - SCROLL_ANCHOR_OFFSET;
+    window.scrollTo({ top, left: 0, behavior: "smooth" });
+}
+
+function initScrollTriggers(): void {
+    document.querySelectorAll<HTMLAnchorElement>("a.js-scroll-trigger[href^='#']").forEach((anchor) => {
+        anchor.addEventListener("click", (event: MouseEvent) => {
+            const href = anchor.getAttribute("href");
+            if (!href || href === "#") {
+                return;
+            }
+            event.preventDefault();
+            scrollToAnchor(href);
+            hideNavbarCollapse();
+        });
+    });
+}
+
+function initScrollListeners(): void {
+    const onScroll = (): void => {
+        updateNavbarShrink();
+        updateScrollSpy();
     };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse);
-})(jQuery); // End of use strict
-*/
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+}
+
+function initTopButton(): void {
+    const topButton = document.getElementById("topButton");
+    if (topButton) {
+        topButton.addEventListener("click", () => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        });
+    }
+}
+
+function initYear(): void {
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+    }
+}
+
+function init(): void {
+    initYear();
+    initTopButton();
+    initScrollTriggers();
+    initScrollListeners();
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
+}

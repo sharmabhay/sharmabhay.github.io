@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
-        "module": "None",
         "target": "ES2017",
-        "sourceMap": true,
+        "module": "none",
+        "lib": ["DOM", "ES2017"],
+        "sourceMap": false,
         "removeComments": true,
         "noEmitOnError": true,
         "strict": true,
@@ -12,8 +13,5 @@
         "noImplicitThis": true,
         "noImplicitReturns": true
     },
-
-    "files": [
-        "scripts.ts"
-    ]
+    "files": ["scripts.ts"]
 }
