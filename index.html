@@ -54,16 +54,6 @@
             </div>
         </nav>
 
-        <div class="container pt-5 mt-5">
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                Explore my <a href="#projects" class="alert-link">GitHub projects</a> or
-                <a href="#resume" class="alert-link">download my résumé</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        </div>
-
         <header class="masthead">
             <div class="container d-flex h-100 align-items-center">
                 <div class="mx-auto text-center">
@@ -73,6 +63,16 @@
                 </div>
             </div>
         </header>
+
+        <div class="container py-3">
+            <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+                Explore my <a href="#projects" class="alert-link">GitHub projects</a> or
+                <a href="#resume" class="alert-link">download my resume</a>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
 
         <section class="about-section text-center" id="about">
             <div class="container">
@@ -245,19 +245,22 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card py-4 h-100">
-                            <div class="card-body text-center">
+                            <div class="card-body text-center d-flex flex-column">
                                 <i class="fab fa-github text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Connect</h4>
+                                <h4 class="text-uppercase m-0">Contact</h4>
                                 <hr class="my-4" />
-                                <p class="small text-black-50 mb-0">Find more code and activity on my GitHub profile.</p>
+                                <p class="small text-black-50 mb-4 flex-grow-1">
+                                    Reach me through my GitHub profile — repos, activity, and the best place to start a conversation.
+                                </p>
+                                <a
+                                    class="btn btn-accent align-self-center"
+                                    href="https://github.com/sharmabhay"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                    >Open GitHub profile</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://github.com/sharmabhay" rel="noopener noreferrer" target="_blank" aria-label="GitHub profile">
-                        <i class="fab fa-github"></i>
-                    </a>
                 </div>
             </div>
         </section>

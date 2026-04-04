@@ -56,6 +56,23 @@ body {
     background-color: transparent;
 }
 
+// Collapsed / phone: solid white bar — links must stay dark (Bootstrap defaults can look faint)
+@media (max-width: 991.98px) {
+    #mainNav .nav-link {
+        color: rgba(0, 0, 0, 0.75);
+    }
+
+    #mainNav .nav-link:hover,
+    #mainNav .nav-link:focus {
+        color: #000;
+    }
+
+    #mainNav .nav-link.active {
+        color: $accent;
+        font-weight: 600;
+    }
+}
+
 @media (min-width: 992px) {
     #mainNav {
         padding-top: 0;
