@@ -4,6 +4,10 @@ const SCROLL_ANCHOR_OFFSET = 70;
 
 const SECTION_IDS = ["about", "experience", "projects", "contact"] as const;
 
+function getPageY(el: HTMLElement): number {
+    return el.getBoundingClientRect().top + window.scrollY;
+}
+
 function hideNavbarCollapse(): void {
     const $ = (window as unknown as { jQuery?: (sel: string) => { collapse: (action: string) => void } }).jQuery;
     if ($) {
@@ -26,7 +30,7 @@ function updateScrollSpy(): void {
     let activeId: string | null = null;
     for (const id of SECTION_IDS) {
         const el = document.getElementById(id);
-        if (el && el.offsetTop <= scrollPos) {
+        if (el && getPageY(el) <= scrollPos) {
             activeId = id;
         }
     }
@@ -34,8 +38,11 @@ function updateScrollSpy(): void {
     links.forEach((link) => {
         const href = link.getAttribute("href");
         const id = href && href.startsWith("#") ? href.slice(1) : "";
-        const isSection = (SECTION_IDS as readonly string[]).includes(id);
-        link.classList.toggle("active", isSection && id === activeId);
+        if (id === "resume" || id === "contact") {
+            link.classList.toggle("active", activeId === "contact");
+        } else {
+            link.classList.toggle("active", (SECTION_IDS as readonly string[]).includes(id) && id === activeId);
+        }
     });
 }
 
