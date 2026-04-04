@@ -2,7 +2,7 @@ const NAV_SHRINK_AT = 100;
 const SCROLL_SPY_OFFSET = 120;
 const SCROLL_ANCHOR_OFFSET = 70;
 
-const SECTION_IDS = ["about", "experience", "projects", "contact"] as const;
+const SECTION_IDS = ["about", "experience", "projects", "resume", "contact"] as const;
 
 function getPageY(el: HTMLElement): number {
     return el.getBoundingClientRect().top + window.scrollY;
@@ -39,7 +39,7 @@ function updateScrollSpy(): void {
         const href = link.getAttribute("href");
         const id = href && href.startsWith("#") ? href.slice(1) : "";
         if (id === "resume" || id === "contact") {
-            link.classList.toggle("active", activeId === "contact");
+            link.classList.toggle("active", activeId === "resume");
         } else {
             link.classList.toggle("active", (SECTION_IDS as readonly string[]).includes(id) && id === activeId);
         }
