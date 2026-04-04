@@ -1,122 +1,89 @@
-$font_family: Verdana, "Times New Roman", Serif;
+// Personal brand overrides on top of Grayscale (lib/grayscale/css/styles.css)
 
-h1 {
-    font-style: $font_family;
+$accent: #64a19d;
+$accent-hover: #7ebfb9;
+$accent-dark: #548f8a;
+
+// Grayscale references missing local assets; use a reliable background for the hero
+.masthead {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.75) 75%, #000 100%),
+        url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
 }
 
-body {
-    background-color:#34495e;
+.masthead-tagline {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
 }
 
-#test {
-    font-style: $font_family;
-    color: red;
-    background-color: rgb(77, 240, 45);
-    margin-bottom: 25px;
+@media (min-width: 768px) {
+    .masthead-tagline {
+        font-size: 1.15rem;
+    }
 }
 
-#uwp {
-    background-image: linear-gradient(to right, #00c3ff, #ffff1c);
-    color: white;
+.experience-section {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
-#testImage {
-    border: 2px solid black;
+.about-link {
+    color: $accent;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+
+    &:hover {
+        color: $accent-hover;
+    }
 }
 
-#mySliderValue {
-    font-style: $font_family;
-    color: rgb(15, 226, 138);
+.project-thumb {
+    object-fit: cover;
+    max-height: 420px;
+    width: 100%;
 }
 
-#myPoints {
-    font-style: $font_family;
-    color: rgb(42, 119, 219);
-    background-color: rgb(247, 0, 255);
+a.about-link {
+    color: $accent;
 }
 
-#myGit {
-    margin-bottom: 5px;
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#addressSpace {
-    margin-top: 30px;
-}
+.btn-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    z-index: 1030;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: $accent;
+    color: #fff;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
 
-/*
-.w75 {
-    width: 75%;
-}
+    &:hover {
+        background: $accent-dark;
+        color: #fff;
+        transform: translateY(-2px);
+    }
 
-.p5 {
-    padding: 5px;
-}
-
-.mb25 {
-    margin-bottom: 25px;
-}
-
-.textJustify {
-    text-align: justify;
-}
-
-.inlineCenter {
-    text-align: center;
-}
-
-.blockCenter {
-    margin: 0 auto;
-}
-
-.small {
-    font-size: 80%;
-    font-weight: 400;
-}
-*/
-
-.blueLinkColour {
-    color: blue;
-}
-
-.listNumberInside {
-    list-style-position: inside;
+    &:focus {
+        outline: 2px solid #fff;
+        outline-offset: 2px;
+    }
 }
 
 .underline {
     text-decoration: underline;
-}
-
-.container {
-    background-color: white;
-}
-
-.bg-offWhite {
-    background-color:#f7f7f7;
-}
-
-.accent {
-    color: #e45900;
-}
-
-a, a:link, a:visited {
-    text-decoration: none;
-    color: #212529;
-}
-
-.font-special {
-    font-family: 'Dosis', sans-serif;
-}
-
-@media (max-width: 767px) {
-    .bg-offWhite {
-        background-color:white;
-    }
-}
-
-a:hover {
-    color: #e45900;
-}
-
-img.mx-auto {
-    display: block;
 }

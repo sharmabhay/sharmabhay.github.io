@@ -1,120 +1,77 @@
-h1 {
-  font-style: Verdana, "Times New Roman", Serif;
+.masthead {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.75) 75%, #000 100%), url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 
-body {
-  background-color: #34495e;
+.masthead-tagline {
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.05rem;
 }
 
-#test {
-  font-style: Verdana, "Times New Roman", Serif;
-  color: red;
-  background-color: #4df02d;
-  margin-bottom: 25px;
+@media (min-width: 768px) {
+  .masthead-tagline {
+    font-size: 1.15rem;
+  }
+}
+.experience-section {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
 }
 
-#uwp {
-  background-image: linear-gradient(to right, #00c3ff, #ffff1c);
-  color: white;
+.about-link {
+  color: #64a19d;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.about-link:hover {
+  color: #7ebfb9;
 }
 
-#testImage {
-  border: 2px solid black;
+.project-thumb {
+  object-fit: cover;
+  max-height: 420px;
+  width: 100%;
 }
 
-#mySliderValue {
-  font-style: Verdana, "Times New Roman", Serif;
-  color: #0fe28a;
+a.about-link {
+  color: #64a19d;
 }
 
-#myPoints {
-  font-style: Verdana, "Times New Roman", Serif;
-  color: #2a77db;
-  background-color: #f700ff;
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-#myGit {
-  margin-bottom: 5px;
+.btn-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1030;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #64a19d;
+  color: #fff;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
-
-#addressSpace {
-  margin-top: 30px;
+.btn-top:hover {
+  background: #548f8a;
+  color: #fff;
+  transform: translateY(-2px);
 }
-
-/*
-.w75 {
-    width: 75%;
-}
-
-.p5 {
-    padding: 5px;
-}
-
-.mb25 {
-    margin-bottom: 25px;
-}
-
-.textJustify {
-    text-align: justify;
-}
-
-.inlineCenter {
-    text-align: center;
-}
-
-.blockCenter {
-    margin: 0 auto;
-}
-
-.small {
-    font-size: 80%;
-    font-weight: 400;
-}
-*/
-.blueLinkColour {
-  color: blue;
-}
-
-.listNumberInside {
-  list-style-position: inside;
+.btn-top:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 .underline {
   text-decoration: underline;
 }
-
-.container {
-  background-color: white;
-}
-
-.bg-offWhite {
-  background-color: #f7f7f7;
-}
-
-.accent {
-  color: #e45900;
-}
-
-a, a:link, a:visited {
-  text-decoration: none;
-  color: #212529;
-}
-
-.font-special {
-  font-family: "Dosis", sans-serif;
-}
-
-@media (max-width: 767px) {
-  .bg-offWhite {
-    background-color: white;
-  }
-}
-a:hover {
-  color: #e45900;
-}
-
-img.mx-auto {
-  display: block;
-}
-
-/*# sourceMappingURL=styles.css.map */
