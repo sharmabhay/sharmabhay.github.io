@@ -39,7 +39,7 @@ function updateScrollSpy(): void {
         const href = link.getAttribute("href");
         const id = href && href.startsWith("#") ? href.slice(1) : "";
         if (id === "resume" || id === "contact") {
-            link.classList.toggle("active", activeId === "resume");
+            link.classList.toggle("active", activeId === "resume" || activeId === "contact");
         } else {
             link.classList.toggle("active", (SECTION_IDS as readonly string[]).includes(id) && id === activeId);
         }
