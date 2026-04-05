@@ -2,17 +2,18 @@
 const NAV_SHRINK_AT = 100;
 const SCROLL_SPY_OFFSET = 120;
 const SCROLL_ANCHOR_OFFSET = 70;
-const SECTION_IDS = ["about", "experience", "projects", "contact"];
+const SECTION_IDS = ["about", "experience", "projects", "resume", "contact"];
 function getPageY(el) {
     return el.getBoundingClientRect().top + window.scrollY;
 }
 function hideNavbarCollapse() {
+    var _a;
     const $ = window.jQuery;
     if ($) {
         $(".navbar-collapse").collapse("hide");
         return;
     }
-    document.getElementById("navbarResponsive")?.classList.remove("show");
+    (_a = document.getElementById("navbarResponsive")) === null || _a === void 0 ? void 0 : _a.classList.remove("show");
 }
 function updateNavbarShrink() {
     const nav = document.getElementById("mainNav");
@@ -23,11 +24,17 @@ function updateNavbarShrink() {
 }
 function updateScrollSpy() {
     const scrollPos = window.scrollY + SCROLL_SPY_OFFSET;
+    const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 10;
     let activeId = null;
-    for (const id of SECTION_IDS) {
-        const el = document.getElementById(id);
-        if (el && getPageY(el) <= scrollPos) {
-            activeId = id;
+    if (isAtBottom) {
+        activeId = SECTION_IDS[SECTION_IDS.length - 1];
+    }
+    else {
+        for (const id of SECTION_IDS) {
+            const el = document.getElementById(id);
+            if (el && getPageY(el) <= scrollPos) {
+                activeId = id;
+            }
         }
     }
     const links = document.querySelectorAll("#mainNav .nav-link.js-scroll-trigger");
@@ -35,7 +42,7 @@ function updateScrollSpy() {
         const href = link.getAttribute("href");
         const id = href && href.startsWith("#") ? href.slice(1) : "";
         if (id === "resume" || id === "contact") {
-            link.classList.toggle("active", activeId === "contact");
+            link.classList.toggle("active", activeId === "resume" || activeId === "contact");
         }
         else {
             link.classList.toggle("active", SECTION_IDS.includes(id) && id === activeId);
