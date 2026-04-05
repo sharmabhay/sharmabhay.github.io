@@ -27,11 +27,16 @@ function updateNavbarShrink(): void {
 
 function updateScrollSpy(): void {
     const scrollPos = window.scrollY + SCROLL_SPY_OFFSET;
+    const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 10;
     let activeId: string | null = null;
-    for (const id of SECTION_IDS) {
-        const el = document.getElementById(id);
-        if (el && getPageY(el) <= scrollPos) {
-            activeId = id;
+    if (isAtBottom) {
+        activeId = SECTION_IDS[SECTION_IDS.length - 1];
+    } else {
+        for (const id of SECTION_IDS) {
+            const el = document.getElementById(id);
+            if (el && getPageY(el) <= scrollPos) {
+                activeId = id;
+            }
         }
     }
     const links = document.querySelectorAll<HTMLAnchorElement>("#mainNav .nav-link.js-scroll-trigger");
