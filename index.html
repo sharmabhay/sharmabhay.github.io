@@ -226,19 +226,31 @@
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section class="contact-section bg-black" id="contact">
             <div class="container">
                 <div class="row">
+                    <!-- Resume Card -->
                     <div class="col-md-6 mb-4 mb-md-0" id="resume">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center d-flex flex-column">
                                 <i class="fas fa-file-pdf text-primary mb-2"></i>
                                 <h4 class="text-uppercase m-0">Résumé</h4>
                                 <hr class="my-4" />
-                                <a class="btn btn-accent align-self-center" href="AbhaySharma_Resume.pdf" download>Download résumé (PDF)</a>
+                                <div class="d-flex justify-content-center gap-2">
+                                    <!-- Preview Button triggers Modal -->
+                                    <button type="button" class="btn btn-outline-primary mr-2" data-toggle="modal" data-target="#resumeModal">
+                                        <i class="fas fa-eye mr-1"></i> Preview
+                                    </button>
+                                    <!-- Download Button -->
+                                    <a class="btn btn-accent" href="assets/documents/AbhaySharma_Resume.pdf" download>
+                                        <i class="fas fa-download mr-1"></i> Download
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- GitHub Card -->
                     <div class="col-md-6">
                         <div class="card py-4 h-100">
                             <div class="card-body text-center d-flex flex-column">
