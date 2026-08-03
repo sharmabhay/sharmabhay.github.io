@@ -125,6 +125,23 @@ function loadResumePreview(): void {
     }
 }
 
+function initResumePreview(): void {
+    const modal = document.getElementById("resumeModal");
+    const previewButton = document.querySelector<HTMLButtonElement>('button[data-target="#resumeModal"]');
+
+    if (previewButton) {
+        previewButton.addEventListener("click", () => {
+            loadResumePreview();
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("shown.bs.modal", () => {
+            loadResumePreview();
+        });
+    }
+}
+
 function initTopButton(): void {
     const topButton = document.getElementById("topButton");
     if (topButton) {
@@ -146,6 +163,7 @@ function init(): void {
     initTopButton();
     initScrollTriggers();
     initScrollListeners();
+    initResumePreview();
 
     if (window.location.hash) {
         requestAnimationFrame(() => {
