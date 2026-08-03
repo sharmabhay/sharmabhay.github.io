@@ -4,6 +4,8 @@ const SCROLL_ANCHOR_OFFSET = 70;
 
 const SECTION_IDS = ["about", "experience", "projects", "resume", "contact"] as const;
 
+let currentHash = window.location.hash || "";
+
 function getPageY(el: HTMLElement): number {
     return el.getBoundingClientRect().top + window.scrollY;
 }
@@ -22,13 +24,25 @@ function updateNavbarShrink(): void {
     if (!nav) {
         return;
     }
+
     nav.classList.toggle("navbar-shrink", window.scrollY > NAV_SHRINK_AT);
+}
+
+function setUrlHash(hash: string): void {
+    if (!hash || hash === currentHash) {
+        return;
+    }
+
+    currentHash = hash;
+    history.replaceState(null, "", hash);
 }
 
 function updateScrollSpy(): void {
     const scrollPos = window.scrollY + SCROLL_SPY_OFFSET;
     const isAtBottom = (window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 10;
+
     let activeId: string | null = null;
+
     if (isAtBottom) {
         activeId = SECTION_IDS[SECTION_IDS.length - 1];
     } else {
@@ -39,16 +53,21 @@ function updateScrollSpy(): void {
             }
         }
     }
+
     const links = document.querySelectorAll<HTMLAnchorElement>("#mainNav .nav-link.js-scroll-trigger");
     links.forEach((link) => {
         const href = link.getAttribute("href");
         const id = href && href.startsWith("#") ? href.slice(1) : "";
+
         if (id === "resume" || id === "contact") {
             link.classList.toggle("active", activeId === "resume" || activeId === "contact");
         } else {
             link.classList.toggle("active", (SECTION_IDS as readonly string[]).includes(id) && id === activeId);
         }
     });
+
+    const desiredHash = activeId ? `#${activeId}` : "#page-top";
+    setUrlHash(desiredHash);
 }
 
 function scrollToAnchor(hash: string): void {
@@ -56,10 +75,12 @@ function scrollToAnchor(hash: string): void {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         return;
     }
+
     const target = document.querySelector<HTMLElement>(hash);
     if (!target) {
         return;
     }
+
     const top = target.getBoundingClientRect().top + window.pageYOffset - SCROLL_ANCHOR_OFFSET;
     window.scrollTo({ top, left: 0, behavior: "smooth" });
 }
@@ -71,8 +92,10 @@ function initScrollTriggers(): void {
             if (!href || href === "#") {
                 return;
             }
+
             event.preventDefault();
             scrollToAnchor(href);
+            setUrlHash(href);
             hideNavbarCollapse();
         });
     });
@@ -83,8 +106,23 @@ function initScrollListeners(): void {
         updateNavbarShrink();
         updateScrollSpy();
     };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+}
+
+function loadResumePreview(): void {
+    const iframe = document.getElementById("resumeIframe") as HTMLIFrameElement | null;
+    if (!iframe) {
+        return;
+    }
+
+    if (!iframe.src) {
+        const src = iframe.dataset.src ?? iframe.getAttribute("data-src") ?? "";
+        if (src) {
+            iframe.src = src;
+        }
+    }
 }
 
 function initTopButton(): void {
@@ -108,6 +146,12 @@ function init(): void {
     initTopButton();
     initScrollTriggers();
     initScrollListeners();
+
+    if (window.location.hash) {
+        requestAnimationFrame(() => {
+            scrollToAnchor(window.location.hash);
+        });
+    }
 }
 
 if (document.readyState === "loading") {
