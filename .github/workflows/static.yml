@@ -42,9 +42,8 @@ jobs:
           # Install Typescript and Sass globally on the runner
           npm install -g typescript sass
 
-          # Compile TypeScript to JavaScript
-          # (If scripts.ts is in a folder, use e.g., tsc js/scripts.ts)
-          tsc scripts.ts
+          # Compile TypeScript to JavaScript using options defined in tsconfig.json
+          tsc
 
           # Compile SCSS to CSS
           # (Replace with your actual file names, e.g., sass scss/styles.scss css/styles.css)
