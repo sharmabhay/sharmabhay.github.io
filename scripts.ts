@@ -66,12 +66,12 @@ function updateScrollSpy(): void {
         }
     });
 
-    const desiredHash = activeId ? `#${activeId}` : "#page-top";
+    const desiredHash = activeId ? `#${activeId}` : "#home";
     setUrlHash(desiredHash);
 }
 
 function scrollToAnchor(hash: string): void {
-    if (hash === "#page-top" || hash === "#") {
+    if (hash === "#home" || hash === "#") {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         return;
     }
