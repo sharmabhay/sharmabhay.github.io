@@ -3,6 +3,7 @@ const NAV_SHRINK_AT = 100;
 const SCROLL_SPY_OFFSET = 120;
 const SCROLL_ANCHOR_OFFSET = 70;
 const SECTION_IDS = ["about", "experience", "projects", "resume", "contact"];
+let currentHash = window.location.hash || "";
 function getPageY(el) {
     return el.getBoundingClientRect().top + window.scrollY;
 }
@@ -21,6 +22,13 @@ function updateNavbarShrink() {
         return;
     }
     nav.classList.toggle("navbar-shrink", window.scrollY > NAV_SHRINK_AT);
+}
+function setUrlHash(hash) {
+    if (!hash || hash === currentHash) {
+        return;
+    }
+    currentHash = hash;
+    history.replaceState(null, "", hash);
 }
 function updateScrollSpy() {
     const scrollPos = window.scrollY + SCROLL_SPY_OFFSET;
@@ -48,9 +56,11 @@ function updateScrollSpy() {
             link.classList.toggle("active", SECTION_IDS.includes(id) && id === activeId);
         }
     });
+    const desiredHash = activeId ? `#${activeId}` : "#home";
+    setUrlHash(desiredHash);
 }
 function scrollToAnchor(hash) {
-    if (hash === "#page-top" || hash === "#") {
+    if (hash === "#home" || hash === "#") {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         return;
     }
@@ -70,6 +80,7 @@ function initScrollTriggers() {
             }
             event.preventDefault();
             scrollToAnchor(href);
+            setUrlHash(href);
             hideNavbarCollapse();
         });
     });
@@ -81,6 +92,33 @@ function initScrollListeners() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
+}
+function loadResumePreview() {
+    var _a, _b;
+    const viewer = document.getElementById("resumeViewer");
+    if (!viewer) {
+        return;
+    }
+    if (!viewer.getAttribute("data")) {
+        const src = (_b = (_a = viewer.dataset.src) !== null && _a !== void 0 ? _a : viewer.getAttribute("data-src")) !== null && _b !== void 0 ? _b : "";
+        if (src) {
+            viewer.setAttribute("data", src);
+        }
+    }
+}
+function initResumePreview() {
+    const modal = document.getElementById("resumeModal");
+    const previewButton = document.querySelector('button[data-target="#resumeModal"]');
+    if (previewButton) {
+        previewButton.addEventListener("click", () => {
+            loadResumePreview();
+        });
+    }
+    if (modal) {
+        modal.addEventListener("shown.bs.modal", () => {
+            loadResumePreview();
+        });
+    }
 }
 function initTopButton() {
     const topButton = document.getElementById("topButton");
@@ -101,6 +139,12 @@ function init() {
     initTopButton();
     initScrollTriggers();
     initScrollListeners();
+    initResumePreview();
+    if (window.location.hash) {
+        requestAnimationFrame(() => {
+            scrollToAnchor(window.location.hash);
+        });
+    }
 }
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
