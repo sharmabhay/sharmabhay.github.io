@@ -325,6 +325,15 @@ a.about-link {
   color: #333;
 }
 
+.resume-modal-body {
+  height: 60vh;
+}
+
+@media (min-width: 768px) {
+  .resume-modal-body {
+    height: 70vh;
+  }
+}
 .btn-accent {
   background-color: #64a19d;
   border: 0;
