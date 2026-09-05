@@ -112,15 +112,15 @@ function initScrollListeners(): void {
 }
 
 function loadResumePreview(): void {
-    const iframe = document.getElementById("resumeIframe") as HTMLIFrameElement | null;
-    if (!iframe) {
+    const viewer = document.getElementById("resumeViewer") as HTMLObjectElement | null;
+    if (!viewer) {
         return;
     }
 
-    if (!iframe.src) {
-        const src = iframe.dataset.src ?? iframe.getAttribute("data-src") ?? "";
+    if (!viewer.getAttribute("data")) {
+        const src = viewer.dataset.src ?? viewer.getAttribute("data-src") ?? "";
         if (src) {
-            iframe.src = src;
+            viewer.setAttribute("data", src);
         }
     }
 }
