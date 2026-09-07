@@ -70,6 +70,12 @@ function updateScrollSpy(): void {
     setUrlHash(desiredHash);
 }
 
+const navbarBrand = document.getElementById("navbarBrand");
+navbarBrand?.addEventListener("click", (e: MouseEvent) => {
+    e.preventDefault();
+    window.location.href = window.location.pathname;
+});
+
 function scrollToAnchor(hash: string): void {
     if (hash === "#home" || hash === "#") {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });

@@ -59,6 +59,11 @@ function updateScrollSpy() {
     const desiredHash = activeId ? `#${activeId}` : "#home";
     setUrlHash(desiredHash);
 }
+const navbarBrand = document.getElementById("navbarBrand");
+navbarBrand === null || navbarBrand === void 0 ? void 0 : navbarBrand.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = window.location.pathname;
+});
 function scrollToAnchor(hash) {
     if (hash === "#home" || hash === "#") {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
